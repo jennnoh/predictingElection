@@ -1,6 +1,6 @@
 The Impact of Voters’ Demographic Factors in Canadian Federal Elections
 ================
-Jenny Oh
+Jenny Oh <br /> 
 November 24, 2022
 
 ## Introduction
@@ -361,11 +361,11 @@ Here, *P* represents the probability of an individual voting for the
 Liberal Party, the coefficients of *β*<sub>1</sub>, *β*<sub>2</sub>,
 *β*<sub>3</sub>, *β*<sub>4</sub>, and *β*<sub>5</sub> represent the
 change in log odds for one unit increase in
-*x*<sub>*i**n**c**o**m**e*</sub>,
-*x*<sub>*p**r**o**v**i**n**c**e*</sub>,
-*x*<sub>*e**d**u**c**a**t**i**o**n*</sub>,
-*x*<sub>*r**e**l**i**g**i**o**u**s*</sub>, and
-*x*<sub>*l**a**n**g**u**a**g**e*</sub> respectively, and *β*<sub>0</sub>
+*x*<sub>*income</sub>,
+*x*<sub>*province*</sub>,
+*x*<sub>*education*</sub>,
+*x*<sub>*religious*</sub>, and
+*x*<sub>*language*</sub> respectively, and *β*<sub>0</sub>
 represents the intercept term.
 
 Logistic regression models generally rely on a few assumptions. These
@@ -425,14 +425,12 @@ the survey data becomes representative of the target population. We will
 poststratify each group and adjust the prediction, that is the
 probability that an individual in a certain demographic subgroup votes
 for the Liberal Party. based on the population size and the estimate of
-each cell. This is illustrated by the mathematical formula:
-
-$$ \\hat {y}^{PS} = \\frac{\\sum{N_j \\hat{y}\_j}}{\\sum{N_j}} $$
+each cell. This is illustrated by the mathematical formula.
 Here, $\\hat{y_j}$ is the cell-level estimate, that is the probability
 that a person with the specified demographic factors in this subgroup of
 the population will vote for the Liberal Party, using the logistic model
-we built. *N*<sub>*j*</sub> is the size of the *j*<sup>*t**h*</sup>
-subgroup of the census data. We calculated *ŷ*<sup>*P**S*</sup>, which
+we built. *N*<sub>*j*</sub> is the size of the *j*<sup>*th*</sup>
+subgroup of the census data. We calculated *ŷ*<sup>*PS*</sup>, which
 is the probability that an individual in the specified subgroup votes
 for the Liberal Party, adjusted for the target population and not the
 sample.
@@ -707,24 +705,9 @@ Voting for Liberal Party Based on the Religion Factor
 
 Voting for Liberal Party Based on the Language Factor
 
-This shows the estimated $\\hat{\\beta_0}$,$\\hat{\\beta_1}$,
+This shows the estimated $\\hat{\\beta_0}$, $\\hat{\\beta_1}$,
 $\\hat{\\beta_2}$, $\\hat{\\beta_3}$, $\\hat{\\beta_4}$, and
 $\\hat{\\beta_5}$ values.
-
-    ## # A tibble: 23 × 5
-    ##    term                              estimate std.error statistic  p.value
-    ##    <chr>                                <dbl>     <dbl>     <dbl>    <dbl>
-    ##  1 (Intercept)                        -1.53      0.123    -12.5   7.03e-36
-    ##  2 income_family$125,000 and more     -0.0346    0.0550    -0.629 5.29e- 1
-    ##  3 income_family$25,000 to $49,999    -0.0977    0.0576    -1.70  8.99e- 2
-    ##  4 income_family$50,000 to $74,999    -0.105     0.0547    -1.92  5.50e- 2
-    ##  5 income_family$75,000 to $99,999    -0.0487    0.0557    -0.875 3.81e- 1
-    ##  6 income_familyLess than $25,000     -0.112     0.0671    -1.67  9.55e- 2
-    ##  7 provinceBritish Columbia            0.711     0.0717     9.91  3.84e-23
-    ##  8 provinceManitoba                    0.762     0.0915     8.33  8.08e-17
-    ##  9 provinceNew Brunswick               1.08      0.112      9.65  5.15e-22
-    ## 10 provinceNewfoundland and Labrador   1.34      0.121     11.1   1.15e-28
-    ## # … with 13 more rows
 
 | income_family         | province                  | education              | religious | language_knowledge      | liberal_predict |
 |:----------------------|:--------------------------|:-----------------------|:----------|:------------------------|----------------:|
